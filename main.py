@@ -47,7 +47,7 @@ def get_orders(page: int = Query(1, ge=1), limit: int = Query(15, ge=1)):
         )
         cursor = conn.cursor(cursor_factory=RealDictCursor)
 
-        # 1. Count records from the VIEW applying your date filter
+       
         cursor.execute("""
             SELECT COUNT(*) FROM v_open_orders_fulfillable
             WHERE "OrderStatus" NOT IN ('Closed', 'Cancelled')
@@ -55,7 +55,7 @@ def get_orders(page: int = Query(1, ge=1), limit: int = Query(15, ge=1)):
         """)
         total_count = cursor.fetchone()['count']
 
-        # 2. Query page slice from the VIEW applying your date filter & ordering
+        
         cursor.execute("""
             SELECT * FROM v_open_orders_fulfillable 
             WHERE "OrderStatus" NOT IN ('Closed', 'Cancelled')
