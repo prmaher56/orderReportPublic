@@ -2,7 +2,7 @@
 
 ======================= TO START ======================= 
 python -m uvicorn main:app --reload
-in cd frontend: 
+in dir frontend: 
 npm run dev
 to refresh:
 python sync_cache.py
@@ -21,24 +21,9 @@ pg_password="password"
 API_BASE_URL="http://localhost:8000/"
 =========================================================
 
+This project uses pgAdmin4 to handle caching from the main ODBC connection into temporary tables.
 
-dont forget to save with f6 in pgAdmin 4 to save data changes
-
-note to self: push to git and DO NOT run npm create again
 
 hosted on http://localhost:5173/
 
-
-in gitbash terminal : git push -u origin main
-to push
-
-
-AFTER commit or for start:
-npm run dev (make sure in cd frontend)
-python -m uvicorn main:app --reload
-
-standard push:
-git add .
-git commit -m "message here"
-git push
 
